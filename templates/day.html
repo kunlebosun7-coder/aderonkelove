@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ day.title }} — Aderonke ❤️</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 80, 130, 0.15), transparent 35%),
+                radial-gradient(circle at 80% 80%, rgba(150, 70, 255, 0.12), transparent 35%),
+                #09070b;
+
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px 15px;
+
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           FLOATING HEARTS
+        ========================================= */
+
+        .heart {
+            position: fixed;
+            color: rgba(255, 120, 160, 0.25);
+            font-size: 22px;
+            animation: floatHeart 7s linear infinite;
+            pointer-events: none;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            bottom: -30px;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(2) {
+            left: 35%;
+            bottom: -30px;
+            animation-delay: 3s;
+        }
+
+        .heart:nth-child(3) {
+            left: 65%;
+            bottom: -30px;
+            animation-delay: 5s;
+        }
+
+        .heart:nth-child(4) {
+            left: 85%;
+            bottom: -30px;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================= */
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+
+            animation: pageAppear 1s ease forwards;
+        }
+
+        @keyframes pageAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================
+           DAY LABEL
+        ========================================= */
+
+        .day-label {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #ff91ad;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        /* =========================================
+           PROGRESS
+        ========================================= */
+
+        .progress {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .progress span {
+            width: 30px;
+            height: 5px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .progress span.active {
+            background: #ff7a9b;
+            box-shadow: 0 0 12px rgba(255, 90, 140, 0.6);
+        }
+
+        /* =========================================
+           CARD
+        ========================================= */
+
+        .card {
+            background: rgba(255,255,255,0.055);
+            border: 1px solid rgba(255,255,255,0.1);
+
+            backdrop-filter: blur(15px);
+
+            border-radius: 28px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 20px 70px rgba(0,0,0,0.45),
+                0 0 40px rgba(255,70,120,0.06);
+        }
+
+        /* =========================================
+           HER PHOTO
+        ========================================= */
+
+        .photo-frame {
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto 25px;
+
+            border-radius: 22px;
+            overflow: hidden;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.4),
+                0 0 30px rgba(255,80,130,0.12);
+
+            animation: photoAppear 1.2s ease forwards;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 320px;
+
+            object-fit: cover;
+            display: block;
+
+            transition: transform 0.6s ease;
+        }
+
+        .photo-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        @keyframes photoAppear {
+
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* =========================================
+           TITLE
+        ========================================= */
+
+        h1 {
+            font-family: Georgia, serif;
+
+            font-size: clamp(28px, 6vw, 46px);
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #ff9db5
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* =========================================
+           MESSAGE
+        ========================================= */
+
+        .message {
+            color: #ddd5da;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            max-width: 520px;
+
+            margin: 0 auto 25px;
+        }
+
+        /* =========================================
+           MUSIC
+        ========================================= */
+
+        .music-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #a9a0a5;
+
+            margin-bottom: 10px;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+            height: 42px;
+            margin-bottom: 25px;
+        }
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            text-decoration: none;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            background: rgba(255,255,255,0.05);
+
+            transition: 0.3s ease;
+        }
+
+        .navigation a:hover {
+            background: rgba(255,100,140,0.15);
+
+            border-color: rgba(255,120,150,0.4);
+
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            .card {
+                padding: 18px;
+                border-radius: 22px;
+            }
+
+            .photo-frame {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .photo-frame img {
+                height: 260px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .message {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .navigation a {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+
+    <div class="heart">❤️</div>
+    <div class="heart">♡</div>
+    <div class="heart">❤️</div>
+    <div class="heart">♡</div>
+
+    <main class="container">
+
+        <div class="day-label">
+            DAY {{ day.day }} • OF 5
+        </div>
+
+        <!-- Progress -->
+
+        <div class="progress">
+
+            {% for number in range(1, 6) %}
+
+                {% if number <= current_day %}
+                    <span class="active"></span>
+                {% else %}
+                    <span></span>
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+        <section class="card">
+
+            <!-- =====================================
+                 ADERONKE'S PHOTO
+            ====================================== -->
+
+            <div class="photo-frame">
+
+                <img
+                    src="{{ url_for('static', filename='images/ader' ~ day.day ~ '.jpg') }}"
+                    alt="Aderonke ❤️"
+                >
+
+            </div>
+
+            <!-- TITLE -->
+
+            <h1>
+                {{ day.title }}
+            </h1>
+
+            <!-- MESSAGE -->
+
+            <p class="message">
+                {{ day.message }}
+            </p>
+
+            <!-- MUSIC -->
+
+            <div class="music-label">
+                TODAY'S SONG ❤️
+            </div>
+
+            <audio controls>
+
+                <source
+                    src="{{ url_for('static', filename='music/' ~ day.song) }}"
+                    type="audio/mpeg"
+                >
+
+                Your browser does not support audio.
+
+            </audio>
+
+            <!-- NAVIGATION -->
+
+            <div class="navigation">
+
+                <a href="/">
+                    ← HOME
+                </a>
+
+                {% if day.day < 5 %}
+
+                    <a href="{{ url_for('day', day_number=day.day + 1) }}">
+                        NEXT DAY →
+                    </a>
+
+                {% else %}
+
+                    <a href="{{ url_for('final') }}">
+                        FINAL SURPRISE ❤️
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

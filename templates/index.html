@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>For Aderonke ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+
+            background: #09070b;
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            overflow-x: hidden;
+        }
+
+        /* ==================================================
+           OPENING SCREEN
+           ================================================== */
+
+        .opening {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(220, 45, 115, 0.20),
+                    transparent 32%
+                ),
+                #09070b;
+
+            animation:
+                openingFadeOut 1.2s ease
+                3.8s forwards;
+
+            pointer-events: none;
+        }
+
+        .opening-content {
+
+            text-align: center;
+
+            animation:
+                openingContent 3.5s ease
+                forwards;
+        }
+
+        .opening-heart {
+
+            width: 75px;
+
+            height: 75px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f04d8a,
+                    #8d174b
+                );
+
+            font-size: 29px;
+
+            box-shadow:
+                0 0 50px
+                rgba(240, 77, 138, 0.40);
+
+            animation:
+                openingHeart 1.5s
+                ease-in-out infinite;
+        }
+
+        .opening-small {
+
+            color: #c99bae;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 14px;
+        }
+
+        .opening-title {
+
+            color: #fff5f9;
+
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(
+                    25px,
+                    7vw,
+                    42px
+                );
+
+            font-style: italic;
+
+            letter-spacing: 1px;
+        }
+
+        @keyframes openingHeart {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.10);
+            }
+
+        }
+
+        @keyframes openingContent {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.92);
+
+                filter: blur(8px);
+            }
+
+            20% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+
+                filter: blur(0);
+            }
+
+            75% {
+
+                opacity: 1;
+
+                transform:
+                    scale(1);
+
+                filter: blur(0);
+            }
+
+            100% {
+
+                opacity: 0;
+
+                transform:
+                    scale(1.04);
+
+                filter: blur(5px);
+            }
+
+        }
+
+        @keyframes openingFadeOut {
+
+            0% {
+
+                opacity: 1;
+            }
+
+            70% {
+
+                opacity: 1;
+            }
+
+            100% {
+
+                opacity: 0;
+
+                visibility: hidden;
+            }
+
+        }
+
+        /* ==================================================
+           MAIN BACKGROUND
+           ================================================== */
+
+        .background {
+
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            z-index: 0;
+
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    rgba(190, 30, 91, 0.18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(255, 90, 150, 0.08),
+                    transparent 30%
+                ),
+                #09070b;
+        }
+
+        .glow {
+
+            position: absolute;
+
+            width: 450px;
+
+            height: 450px;
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: 0.18;
+
+            animation:
+                drift 10s ease-in-out
+                infinite alternate;
+        }
+
+        .glow.one {
+
+            background: #d82d73;
+
+            top: -180px;
+
+            left: -150px;
+        }
+
+        .glow.two {
+
+            background: #7d1748;
+
+            bottom: -200px;
+
+            right: -150px;
+
+            animation-delay: 3s;
+        }
+
+        @keyframes drift {
+
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(80px, 50px);
+            }
+
+        }
+
+        /* ==================================================
+           FLOATING HEARTS
+           ================================================== */
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -30px;
+
+            color:
+                rgba(
+                    255,
+                    105,
+                    160,
+                    0.45
+                );
+
+            font-size: 18px;
+
+            animation:
+                rise linear forwards;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+        @keyframes rise {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    scale(0.8);
+
+                opacity: 0;
+            }
+
+            15% {
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    scale(1.4);
+
+                opacity: 0;
+            }
+
+        }
+
+        /* ==================================================
+           MAIN PAGE
+           ================================================== */
+
+        .page {
+
+            position: relative;
+
+            z-index: 2;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px 20px;
+
+            opacity: 0;
+
+            animation:
+                pageReveal 1.2s ease
+                3.7s forwards;
+        }
+
+        @keyframes pageReveal {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+        .container {
+
+            width: 100%;
+
+            max-width: 850px;
+
+            text-align: center;
+        }
+
+        /* ==================================================
+           TOP LABEL
+           ================================================== */
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                9px 17px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.13);
+
+            border-radius: 50px;
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            color: #e6a7bf;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 25px;
+
+            animation:
+                appear 1s ease
+                4.0s both;
+        }
+
+        .eyebrow span {
+
+            color: #ff6fa8;
+        }
+
+        /* ==================================================
+           NAME
+           ================================================== */
+
+        .name {
+
+            font-family: Georgia, serif;
+
+            font-size:
+                clamp(
+                    60px,
+                    13vw,
+                    135px
+                );
+
+            line-height: 0.85;
+
+            letter-spacing: -6px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff 10%,
+                    #ffb4d1 45%,
+                    #d83a79 80%
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            text-shadow:
+                0 0 50px
+                rgba(231, 55, 120, 0.15);
+
+            animation:
+                nameAppear 1.4s ease
+                4.1s both;
+        }
+
+        @keyframes nameAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+
+                filter: blur(10px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+                filter: blur(0);
+            }
+
+        }
+
+        /* ==================================================
+           SUBTITLE
+           ================================================== */
+
+        .subtitle {
+
+            margin-top: 30px;
+
+            color: #c9aab9;
+
+            font-family: Georgia, serif;
+
+            font-style: italic;
+
+            font-size:
+                clamp(
+                    16px,
+                    3vw,
+                    22px
+                );
+
+            line-height: 1.7;
+
+            animation:
+                appear 1.5s ease
+                4.2s both;
+        }
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(15px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+        /* ==================================================
+           LETTER CARD
+           ================================================== */
+
+        .letter {
+
+            position: relative;
+
+            margin:
+                45px auto 0;
+
+            width: 100%;
+
+            max-width: 560px;
+
+            padding:
+                40px 35px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.12);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.07),
+                    rgba(255, 255, 255, 0.025)
+                );
+
+            backdrop-filter: blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0, 0, 0, 0.55),
+
+                inset 0 1px 0
+                rgba(255, 255, 255, 0.08);
+
+            animation:
+                cardAppear 1.4s ease
+                4.4s both;
+        }
+
+        @keyframes cardAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(35px)
+                    scale(0.97);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+        /* ==================================================
+           HEART
+           ================================================== */
+
+        .card-heart {
+
+            width: 64px;
+
+            height: 64px;
+
+            margin:
+                0 auto 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #ff5e98,
+                    #a81d59
+                );
+
+            box-shadow:
+                0 0 35px
+                rgba(240, 50, 120, 0.35);
+
+            font-size: 25px;
+
+            animation:
+                heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            10% {
+                transform: scale(1.08);
+            }
+
+            20% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scale(1.08);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+
+        }
+
+        /* ==================================================
+           CARD TEXT
+           ================================================== */
+
+        .letter h2 {
+
+            font-family: Georgia, serif;
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+        .letter p {
+
+            color: #bda4b1;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+        /* ==================================================
+           BUTTON
+           ================================================== */
+
+        .open-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 30px;
+
+            padding:
+                16px 30px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f04d8a,
+                    #a91d5a
+                );
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 15px 35px
+                rgba(190, 30, 91, 0.3);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+            text-decoration: none;
+
+            animation:
+                buttonGlow 2.5s
+                ease-in-out
+                5.5s infinite;
+        }
+
+        @keyframes buttonGlow {
+
+            0%,
+            100% {
+
+                box-shadow:
+                    0 15px 35px
+                    rgba(190, 30, 91, 0.3);
+            }
+
+            50% {
+
+                box-shadow:
+                    0 15px 45px
+                    rgba(240, 77, 138, 0.55);
+            }
+
+        }
+
+        .open-button:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.03);
+
+            box-shadow:
+                0 20px 45px
+                rgba(240, 77, 138, 0.4);
+        }
+
+        .open-button:active {
+
+            transform:
+                scale(0.97);
+        }
+
+        /* ==================================================
+           DETAILS
+           ================================================== */
+
+        .details {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 35px;
+
+            margin-top: 28px;
+
+            color: #705c68;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            animation:
+                appear 1s ease
+                4.7s both;
+        }
+
+        .details span::before {
+
+            content: "•";
+
+            color: #d83a79;
+
+            margin-right: 8px;
+        }
+
+        /* ==================================================
+           MOBILE
+           ================================================== */
+
+        @media (max-width: 600px) {
+
+            .page {
+
+                padding:
+                    25px 16px;
+            }
+
+            .name {
+
+                letter-spacing: -3px;
+            }
+
+            .subtitle {
+
+                margin-top: 22px;
+
+                font-size: 16px;
+            }
+
+            .letter {
+
+                margin-top: 35px;
+
+                padding:
+                    32px 22px;
+
+                border-radius: 20px;
+            }
+
+            .letter h2 {
+
+                font-size: 21px;
+            }
+
+            .letter p {
+
+                font-size: 13px;
+            }
+
+            .details {
+
+                gap: 15px;
+
+                flex-wrap: wrap;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ==================================================
+         CINEMATIC OPENING
+         ================================================== -->
+
+    <div class="opening">
+
+        <div class="opening-content">
+
+            <div class="opening-heart">
+
+                ❤️
+
+            </div>
+
+            <div class="opening-small">
+
+                FOR ONE SPECIAL PERSON
+
+            </div>
+
+            <div class="opening-title">
+
+                A private little surprise...
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==================================================
+         BACKGROUND
+         ================================================== -->
+
+    <div class="background">
+
+        <div class="glow one"></div>
+
+        <div class="glow two"></div>
+
+    </div>
+
+    <!-- ==================================================
+         MAIN PAGE
+         ================================================== -->
+
+    <main class="page">
+
+        <div class="container">
+
+            <div class="eyebrow">
+
+                <span>♥</span>
+
+                A PRIVATE LITTLE SURPRISE
+
+                <span>♥</span>
+
+            </div>
+
+            <h1 class="name">
+
+                ADERONKE
+
+            </h1>
+
+            <p class="subtitle">
+
+                Some people enter your life randomly...
+
+                <br>
+
+                and somehow become impossible to lose.
+
+            </p>
+
+            <section class="letter">
+
+                <div class="card-heart">
+
+                    ♥
+
+                </div>
+
+                <h2>
+
+                    I made something for you.
+
+                </h2>
+
+                <p>
+
+                    Five days.
+
+                    <br>
+
+                    Five songs.
+
+                    <br>
+
+                    Five little pieces of my heart.
+
+                </p>
+
+                <a
+                    href="/day/1"
+                    class="open-button"
+                >
+
+                    OPEN YOUR SURPRISE
+
+                    <span>→</span>
+
+                </a>
+
+            </section>
+
+            <div class="details">
+
+                <span>5 DAYS</span>
+
+                <span>5 SONGS</span>
+
+                <span>1 SPECIAL WOMAN</span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ==================================================
+         FLOATING HEARTS
+         ================================================== -->
+
+    <script>
+
+        function createHeart() {
