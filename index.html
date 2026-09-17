@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Aderonke ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 20%, 
+
+rgba(255, 92, 135, 0.18), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(255, 40, 100, 0.08), transparent 30%),
+        #09070a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .opening {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #09070a;
+      animation: openingFade 2.2s ease forwards;
+      pointer-events: none;
+    }
+
+
+    .opening-text {
+      text-align: center;
+      letter-spacing: 4px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      animation: openingText 2s ease forwards;
+    }
+
+    @keyframes openingFade {
+      0%, 70% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    @keyframes openingText {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      30% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      75% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .page {
+
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 71, 117, 0.12);
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .glow.one {
+      top: 5%;
+      left: -120px;
+
+    }
+
+    .glow.two {
+      bottom: 0;
+      right: -120px;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 850px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 28px;
+    }
+
+
+    .heart {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(58px, 13vw, 130px);
+      line-height: 0.9;
+      letter-spacing: -5px;
+      background: linear-gradient(135deg, #fff, #ff9ab1, #ff4f78);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 25px;
+    }
+
+    .subtitle {
+      max-width: 600px;
+      margin: 0 auto 45px;
+      font-family: Georgia, serif;
+      font-size: clamp(18px, 3vw, 25px);
+      line-height: 1.6;
+      color: rgba(255,255,255,0.75);
+
+    }
+
+    .letter {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 35px 30px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 25px;
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+    }
+
+    .letter-heart {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .letter h2 {
+
+      font-family: Georgia, serif;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .letter p {
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .open-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 23px;
+      border-radius: 50px;
+      background: #ff5d82;
+      color: white;
+      text-decoration: none;
+
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      transition: 0.3s ease;
+      box-shadow: 0 12px 35px rgba(255, 71, 117, 0.25);
+    }
+
+    .open-button span {
+      font-size: 20px;
+      line-height: 0;
+    }
+
+    .open-button:hover {
+      transform: translateY(-3px);
+      background: #ff7394;
+      box-shadow: 0 16px 45px rgba(255, 71, 117, 0.35);
+    }
+
+    .details {
+
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+      margin-top: 45px;
+    }
+
+    .detail {
+      text-align: center;
+    }
+
+    .detail strong {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .detail span {
+      font-size: 10px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 1px;
+
+    }
+
+    .countdown {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      min-width: 75px;
+      padding: 14px 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      border-radius: 14px;
+    }
+
+    .time-number {
+      font-size: 24px;
+      font-weight: bold;
+
+    }
+
+    .time-label {
+      margin-top: 5px;
+      font-size: 9px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 1px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      font-size: 16px;
+      opacity: 0;
+      pointer-events: none;
+      animation: floatUp linear forwards;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.45;
+      }
+
+      100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 45px 16px;
+      }
+
+      h1 {
+
+        letter-spacing: -3px;
+      }
+
+      .letter {
+        padding: 30px 22px;
+      }
+
+      .details {
+        gap: 20px;
+      }
+
+      .detail strong {
+        font-size: 10px;
+      }
+
+      .time-box {
+        min-width: 65px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="opening">
+    <div class="opening-text">
+      FOR ONE SPECIAL PERSON ❤️
+    </div>
+  </div>
+
+  <div class="page">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <main class="content">
+
+      <div class="eyebrow">
+        A PRIVATE LITTLE SURPRISE
+      </div>
+
+      <div class="heart">
+
+        ❤️
+      </div>
+
+      <h1>
+        ADERONKE
+      </h1>
+
+      <p class="subtitle">
+        Some people enter your life randomly...
+        and somehow become impossible to lose.
+      </p>
+
+      <section class="letter">
+
+        <div class="letter-heart">
+          ❤️
+        </div>
+
+        <h2>
+          I made something for you.
+
+        </h2>
+
+        <p>
+          Five days. Five songs.
+          Five little pieces of my heart.
+          <br>
+          And each day has something waiting just for you.
+        </p>
+
+        <a href="day1.html" class="open-button">
+          OPEN YOUR SURPRISE
+          <span>→</span>
+        </a>
+
+        <div class="countdown">
+
+          <div class="time-box">
+            <div class="time-number" id="days">00</div>
+
+            <div class="time-label">DAYS</div>
+          </div>
+
+          <div class="time-box">
+            <div class="time-number" id="hours">00</div>
+            <div class="time-label">HOURS</div>
+          </div>
+
+          <div class="time-box">
+            <div class="time-number" id="minutes">00</div>
+            <div class="time-label">MINUTES</div>
+          </div>
+
+          <div class="time-box">
+            <div class="time
