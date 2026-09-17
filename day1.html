@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Day 1 — Aderonke ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 15%, 
+
+rgba(255, 85, 125, 0.16), transparent 35%),
+        #09070a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 45px 20px 60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 850px;
+      text-align: center;
+    }
+
+    .top {
+
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 25px;
+    }
+
+    .heart {
+      font-size: 35px;
+      margin-bottom: 15px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+
+    .day {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #ff8da8;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 8vw, 70px);
+      line-height: 1;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #fff, #ff9eb5, #ff527d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .photo {
+
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 35px;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+    }
+
+    .photo img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .letter {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 35px 30px;
+
+      border-radius: 25px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .letter p {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .music {
+      margin: 30px auto 0;
+      max-width: 650px;
+      padding: 25px;
+      border-radius: 20px;
+
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .music-title {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 15px;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    .navigation {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+      font-size: 11px;
+      letter-spacing: 1px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .button.primary {
+      background: #ff5d82;
+      border-color: #ff5d82;
+    }
+
+    .progress {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 35px;
+    }
+
+    .progress span {
+      width: 45px;
+      height: 3px;
+      border-radius: 5px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .progress span.active {
+      background: #ff5d82;
+
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      color: #ff6d8e;
+      opacity: 0;
+      pointer-events: none;
+      animation: floatUp linear forwards;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.35;
+      }
+
+
+      100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 35px 15px 45px;
+      }
+
+      .letter {
+        padding: 28px 20px;
+      }
+
+      .letter p {
+        font-size: 16px;
+      }
+
+      .photo {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <main class="container">
+
+      <div class="top">
+        FOR YOU, ADERONKE ❤️
+      </div>
+
+      <div class="heart">
+        ❤️
+      </div>
+
+      <div class="day">
+        DAY 1 OF 5
+      </div>
+
+      <h1>
+        GOOD MORNING, ADERONKE ❤️
+      </h1>
+
+      <div class="photo">
+        <img
+          src="static/images/ader1.jpg"
+          alt="Aderonke ❤️"
+        >
+      </div>
+
+      <section class="letter">
+
+        <p>
+          I still think it's funny how randomly you came into my life.
+          Somehow, that random meeting 
+
+became something I genuinely treasure.
+        </p>
+
+      </section>
+
+      <section class="music">
+
+        <div class="music-title">
+          TODAY'S SONG ❤️
+        </div>
+
+        <audio controls>
+          <source src="static/music/day1.mp3" type="audio/mpeg">
+          Your browser does not support audio playback.
+        </audio>
+
+      </section>
+
+      <div class="progress">
+
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="navigation">
+
+        <a href="index.html" class="button">
+          ← HOME
+        </a>
+
+        <a href="day2.html" class="button primary">
+          NEXT DAY →
+        </a>
+
+      </div>
+
+    </main>
+
+
+  </div>
+
+  <script>
+
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+
+      heart.textContent = "♥";
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (10 + Math.random() * 14) + "px";
+
+      heart.style.animationDuration =
+
+        (7 + Math.random() * 6) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 14000);
+    }
+
+    setInterval(createHeart, 900);
+
+  </script>
+
+</body>
+</html>
