@@ -347,7 +347,27 @@ rgba(255, 85, 125, 0.16), transparent 35%),
 
     setInterval(createHeart, 900);
 
+  
+  </script>
+
+  <script>
+    const START_DATE = new Date("September 21, 2026 00:00:00").getTime();
+    const DAY_NUMBER = 2;
+
+    const now = new Date().getTime();
+
+    const daysPassed = Math.floor(
+      (now - START_DATE) / (1000 * 60 * 60 * 24)
+    );
+
+    const currentDay = daysPassed + 1;
+
+    if (now < START_DATE || DAY_NUMBER > currentDay) {
+      window.location.href = "locked.html";
+    }
+
   </script>
 
 </body>
 </html>
+
