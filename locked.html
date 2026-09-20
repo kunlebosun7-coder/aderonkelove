@@ -247,92 +247,52 @@ rgba(255, 85, 125, 0.18), transparent 35%),
 
   </div>
 
-  <script>
+  
 
+<script>
+  const targetDate =
+    new Date("September 21, 2026 00:00:00").getTime();
 
-    const targetDate =
-      new Date("September 20, 2026 00:00:00").getTime();
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-    function updateCountdown() {
-
-      const now = new Date().getTime();
-
-      const difference = targetDate - now;
-
-      if (difference <= 0) {
-
-        document.getElementById("days").textContent = "0";
-        document.getElementById("hours").textContent = "0";
-        document.getElementById("minutes").textC
-
-ontent = "0";
-        document.getElementById("seconds").textContent = "0";
-
-        return;
-      }
-
-      const days =
-        Math.floor(difference / (1000 * 60 * 60 * 24));
-
-      const hours =
-        Math.floor(
-          (difference % (1000 * 60 * 60 * 24))
-          / (1000 * 60 * 60)
-        );
-
-      const minutes =
-        Math.floor(
-          (difference % (1000 * 60 * 60))
-
-          / (1000 * 60)
-        );
-
-      const seconds =
-        Math.floor(
-          (difference % (1000 * 60))
-          / 1000
-        );
-
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
-
+    if (distance <= 0) {
+      document.getElementById("countdown").innerHTML =
+        "IT'S TIME ❤️";
+      return;
     }
 
-    updateCountdown();
+    const days = Math.floor(
+      distance / (1000 * 60 * 60 * 24)
 
-    setInterval(updateCountdown, 1000);
+    );
 
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) /
+      (1000 * 60 * 60)
+    );
 
-    function createHeart() {
+    const minutes = Math.floor(
+      (distance % (1000 * 60 * 60)) /
+      (1000 * 60)
+    );
 
-      const heart = document.createElement("div");
+    const seconds = Math.floor(
+      (distance % (1000 * 60)) /
+      1000
+    );
 
-      heart.className = "floating-heart";
+    document.getElementById("countdown").innerHTML =
+      `${days}D ${hours}H ${minutes}M $
 
-      heart.textContent = "♥";
+{seconds}S`;
+  }
 
-      heart.style.left =
-        Math.random() * 100 + "vw";
+  updateCountdown();
 
-      heart.style.fontSize =
-        (10 + Math.random() * 14) + "px";
-
-
-      heart.style.animationDuration =
-        (7 + Math.random() * 6) + "s";
-
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 14000);
-    }
-
-    setInterval(createHeart, 900);
-
-  </script>
+  setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>
