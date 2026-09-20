@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Almost Time ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 20%, 
+
+rgba(255, 85, 125, 0.18), transparent 35%),
+        #09070a;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+    }
+
+    .heart {
+      font-size: 50px;
+      margin-bottom: 25px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    .small-title {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 18px;
+
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 9vw, 70px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff, #ff9eb5, #ff527d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .message {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 35px;
+    }
+
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .box {
+      padding: 18px 8px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .number {
+      display: block;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 7px;
+
+    }
+
+    .label {
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #ff8da8;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      color: #ff6d8e;
+      opacity: 0;
+      pointer-events: none;
+      animation: floatUp linear forwards;
+    }
+
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.35;
+      }
+
+      100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .countdown {
+        gap: 6px;
+
+      }
+
+      .box {
+        padding: 15px 5px;
+      }
+
+      .number {
+        font-size: 23px;
+      }
+
+      .message {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <main class="container">
+
+      <div class="heart">
+        ❤️
+      </div>
+
+      <div class="small-title">
+        JUST A LITTLE PATIENCE
+      </div>
+
+      <h1>
+        Almost time, Aderonke.
+      </h1>
+
+      <p class="message">
+        Your surprise is waiting for you.
+        But I don't want you opening everything at once. ❤️
+      </p>
+
+      <div class="countdown">
+
+
+        <div class="box">
+          <span class="number" id="days">0</span>
+          <span class="label">DAYS</span>
+        </div>
+
+        <div class="box">
+          <span class="number" id="hours">0</span>
+          <span class="label">HOURS</span>
+        </div>
+
+        <div class="box">
+          <span class="number" id="minutes">0</span>
+          <span class="label">MINUTES</span>
+        </div>
+
+        <div class="box">
+
+          <span class="number" id="seconds">0</span>
+          <span class="label">SECONDS</span>
+        </div>
+
+      </div>
+
+      <div class="date">
+        SEPTEMBER 20, 2026 • ❤️
+      </div>
+
+      <a href="index.html" class="button">
+        GO BACK HOME
+      </a>
+
+    </main>
+
+  </div>
+
+  <script>
+
+
+    const targetDate =
+      new Date("September 20, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+
+      const now = new Date().getTime();
+
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textC
+
+ontent = "0";
+        document.getElementById("seconds").textContent = "0";
+
+        return;
+      }
+
+      const days =
+        Math.floor(difference / (1000 * 60 * 60 * 24));
+
+      const hours =
+        Math.floor(
+          (difference % (1000 * 60 * 60 * 24))
+          / (1000 * 60 * 60)
+        );
+
+      const minutes =
+        Math.floor(
+          (difference % (1000 * 60 * 60))
+
+          / (1000 * 60)
+        );
+
+      const seconds =
+        Math.floor(
+          (difference % (1000 * 60))
+          / 1000
+        );
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+
+      heart.textContent = "♥";
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (10 + Math.random() * 14) + "px";
+
+
+      heart.style.animationDuration =
+        (7 + Math.random() * 6) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 14000);
+    }
+
+    setInterval(createHeart, 900);
+
+  </script>
+
+</body>
+</html>
