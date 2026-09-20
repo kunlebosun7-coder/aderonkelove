@@ -316,36 +316,55 @@ became something I genuinely treasure.
 
   </div>
 
-  <script>
+  
+<script>
 
-    function createHeart() {
+  function createHeart() {
 
-      const heart = document.createElement("div");
+    const heart = document.createElement("div");
 
-      heart.className = "floating-heart";
+    heart.className = "floating-heart";
 
-      heart.textContent = "♥";
+    heart.textContent = "♥";
 
-      heart.style.left =
-        Math.random() * 100 + "vw";
+    heart.style.left =
+      Math.random() * 100 + "vw";
 
-      heart.style.fontSize =
-        (10 + Math.random() * 14) + "px";
+    heart.style.fontSize =
+      (10 + Math.random() * 14) + "px";
 
-      heart.style.animationDuration =
+    heart.style.animationDuration =
+      (7 + Math.random() * 6) + "s";
 
-        (7 + Math.random() * 6) + "s";
+    document.body.appendChild(heart);
 
-      document.body.appendChild(heart);
 
-      setTimeout(() => {
-        heart.remove();
-      }, 14000);
-    }
+    setTimeout(() => {
+      heart.remove();
+    }, 14000);
+  }
 
-    setInterval(createHeart, 900);
+  setInterval(createHeart, 900);
 
-  </script>
+</script>
+
+<script>
+  const START_DATE = new Date("September 21, 2026 00:00:00").getTime();
+  const DAY_NUMBER = 1;
+
+  const now = new Date().getTime();
+
+  const daysPassed = Math.floor(
+    (now - START_DATE) / (1000 * 60 * 60 * 24)
+
+  );
+
+  const currentDay = daysPassed + 1;
+
+  if (now < START_DATE || DAY_NUMBER > currentDay) {
+    window.location.href = "locked.html";
+  }
+</script>
 
 </body>
 </html>
