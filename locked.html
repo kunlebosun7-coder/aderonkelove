@@ -249,6 +249,7 @@ rgba(255, 85, 125, 0.18), transparent 35%),
 
   
 
+
 <script>
   const targetDate =
     new Date("September 21, 2026 00:00:00").getTime();
@@ -258,14 +259,17 @@ rgba(255, 85, 125, 0.18), transparent 35%),
     const distance = targetDate - now;
 
     if (distance <= 0) {
-      document.getElementById("countdown").innerHTML =
-        "IT'S TIME ❤️";
+      document.getElementById("days").textContent = "0";
+      document.getElementById("hours").textContent = "0";
+      document.getElementById("minutes").textContent = "0";
+      document.getElementById("seconds").text
+
+Content = "0";
       return;
     }
 
     const days = Math.floor(
       distance / (1000 * 60 * 60 * 24)
-
     );
 
     const hours = Math.floor(
@@ -281,12 +285,13 @@ rgba(255, 85, 125, 0.18), transparent 35%),
     const seconds = Math.floor(
       (distance % (1000 * 60)) /
       1000
+
     );
 
-    document.getElementById("countdown").innerHTML =
-      `${days}D ${hours}H ${minutes}M $
-
-{seconds}S`;
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
   }
 
   updateCountdown();
